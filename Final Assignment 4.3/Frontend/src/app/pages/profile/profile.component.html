@@ -1,0 +1,40 @@
+<div class="main-container">
+    <div class="movies-list">
+        <h1>Add Your Favorite Movies</h1>
+        <app-movie-card
+            *ngFor="let movie of movies"
+            [link]="['/movie', movie._id]"
+            (delete)="deleteMovie(movie._id)"
+            [title]="movie.title"
+            [director]="movie.director"
+            [length]="movie.length"
+            [myRating]="movie.myRating"
+            [description]="movie.description">
+        </app-movie-card>
+    </div>
+    <button class="button floating-add-button is-primary" routerLink="movie">Add Movie</button>
+    <div class="books-list">
+        <h1>Add your Favorite Books</h1>
+        <app-book-card
+            *ngFor="let book of books"
+            [link]="['/book', book._id]"
+            (delete)="deleteBook(book._id)"
+            [title]="book.title"
+            [author]="book.author"
+            [myRating]="book.myRating"
+            [description]="book.description">
+        </app-book-card>
+    </div>
+    <button class="button floating-add-button is-primary" routerLink="book">Add Book</button>
+    <div class="hobbies-list">
+        <h1>Add Your Hobbies</h1>
+        <app-hobby-card
+            *ngFor="let hobby of hobbies"
+            [link]="['/hobby', hobby._id]"
+            (delete)="deleteHobby(hobby._id)"
+            [title]="hobby.title"
+            [indoorOutdoor]="hobby.indoorOutdoor">
+        </app-hobby-card>
+    </div>
+    <button class="button bottom-button floating-add-button is-primary" routerLink="hobby">Add Hobby</button>
+</div>
